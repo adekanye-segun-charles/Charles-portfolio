@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- ============ SEO ============ -->
+<title>Charles — Software Engineer &amp; Web Developer</title>
+<meta name="description" content="Portfolio of Charles — a Software Engineer and Full-Stack Web Developer building clean, performant web applications.">
+<meta name="keywords" content="Charles, software engineer, full stack developer, web developer portfolio, JavaScript, Node.js, React">
+<meta name="author" content="Charles">
+
+<!-- ============ Open Graph ============ -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Charles — Software Engineer & Web Developer">
+<meta property="og:description" content="Building clean, performant web applications.">
+<meta property="og:image" content="./assets/og-cover.png">
+
+<!-- ============ Twitter Card ============ -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Charles — Software Engineer & Web Developer">
+<meta name="twitter:description" content="Building clean, performant web applications.">
+
+<!-- ============ Favicon (inline SVG, no asset needed) ============ -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%234F7FFF'/%3E%3Cstop offset='1' stop-color='%23A855F7'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='100' height='100' rx='24' fill='%230A0A0F'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Space Grotesk, sans-serif' font-weight='700' fill='url(%23g)' text-anchor='middle'%3EC%3C/text%3E%3C/svg%3E">
+
+<!-- ============ Fonts ============ -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@300..800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<!-- ============ Styles ============ -->
+<link rel="stylesheet" href="style.css">
+
+<!-- Set theme before paint to avoid flash of wrong theme -->
+<script>
+  (function(){
+    try{
+      var saved = localStorage.getItem('theme');
+      var theme = saved || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    }catch(e){
+      document.documentElement.setAttribute('data-theme','dark');
+    }
+  })();
+</script>
+</head>
+
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ================= LOADING SCREEN ================= -->
+<div class="loader" id="loader" aria-hidden="true">
+  <span class="loader-mark">C</span>
+</div>
+
+<!-- ================= CUSTOM CURSOR (desktop only) ================= -->
+<div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+<div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="site-header" id="site-header">
+  <nav class="nav wrap" aria-label="Primary">
+    <a href="#home" class="logo">CharlesTech<span class="dot">.</span></a>
+
+    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home" class="nav-link" data-nav>Home</a></li>
+      <li><a href="#about" class="nav-link" data-nav>About</a></li>
+      <li><a href="#skills" class="nav-link" data-nav>Skills</a></li>
+      <li><a href="#projects" class="nav-link" data-nav>Projects</a></li>
+      <li><a href="#experience" class="nav-link" data-nav>Experience</a></li>
+      <li><a href="#contact" class="nav-link" data-nav>Contact</a></li>
+    </ul>
+
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark and light mode">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.8A9 9 0 1 1 11.2 3 7 7 0 0 0 21 12.8Z"/></svg>
+    </button>
+  </nav>
+</header>
+
+<!-- ================= FLOATING SOCIAL RAIL (desktop) ================= -->
+<div class="social-rail" aria-hidden="true">
+  <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+  <a href="https://linkedin.com/in/charles-adekanye" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+  <a href="https://twitter.com/charlesbuilds" target="_blank" rel="noopener" aria-label="Twitter / X">X</a>
+  <span class="rail-line"></span>
+</div>
+
+<main id="main">
+
+  <!-- ================= HERO ================= -->
+  <section id="home" class="hero">
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="wrap hero-inner">
+      <p class="eyebrow reveal">Hi, my name is</p>
+      <h1 class="hero-title reveal">
+        <span class="gradient-text">Charles</span>
+      </h1>
+      <p class="hero-role reveal">
+        I'm a <span id="typed-role" class="typed-role">Software Engineer</span><span class="cursor-blink">|</span>
+      </p>
+      <p class="hero-dek reveal">
+        I design and build clean, performant full-stack applications. Currently sharpening my back-end skills while shipping polished front-end work.
+      </p>
+      <div class="hero-ctas reveal">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="#contact" class="btn btn-ghost">Get In Touch</a>
+      </div>
+    </div>
+    <a href="#about" class="scroll-cue" aria-label="Scroll to About section">
+      <span></span>
+    </a>
+  </section>
+
+  <!-- ================= ABOUT ================= -->
+  <section id="about" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">01 — About</span>
+        <h2>A little about me</h2>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-text reveal">
+          <p>I'm Charles — a full-stack developer who likes systems that work cleanly on both ends: the interface you see, and the logic underneath it.</p>
+          <p>I build responsive, accessible interfaces and the back-end services behind them, with an eye for detail most people scroll past without noticing.</p>
+          <p>I'm currently deepening my Node.js and Express skills, and looking for opportunities to build things that matter — for teams that care about quality as much as I do.</p>
+        </div>
+
+        <div class="about-stats reveal">
+          <div class="stat-card">
+            <span class="stat-number" data-count="10">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Projects Completed</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="300">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">GitHub Contributions</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="5">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Happy Clients</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number" data-count="2">0</span><span class="stat-plus">+</span>
+            <span class="stat-label">Years of Experience</span>
+          </div>
+          <!-- TODO: swap placeholder stat numbers above for your real figures -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= SKILLS ================= -->
+  <section id="skills" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">02 — Skills</span>
+        <h2>What I work with</h2>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-group reveal">
+          <h3>Languages</h3>
+          <div class="skill-bar" data-skill="75">
+            <div class="skill-bar-top"><span>HTML</span><span class="skill-pct">75%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-bar" data-skill="80">
+            <div class="skill-bar-top"><span>CSS</span><span class="skill-pct">80%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-bar" data-skill="55">
+            <div class="skill-bar-top"><span>JavaScript</span><span class="skill-pct">55%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Frameworks</h3>
+          <div class="skill-bar" data-skill="65">
+            <div class="skill-bar-top"><span>Tailwind CSS</span><span class="skill-pct">65%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-bar" data-skill="50">
+            <div class="skill-bar-top"><span>Node.js</span><span class="skill-pct">50%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+          <div class="skill-bar" data-skill="85">
+            <div class="skill-bar-top"><span>Express</span><span class="skill-pct">85%</span></div>
+            <div class="skill-track"><div class="skill-fill"></div></div>
+          </div>
+        </div>
+
+        <div class="skill-group reveal">
+          <h3>Tools</h3>
+          <div class="tool-chips">
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">VS Code</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects" class="section">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">03 — Work</span>
+        <h2>Selected projects</h2>
+      </div>
+
+      <div class="filter-bar reveal" role="tablist" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="frontend">Front-End</button>
+        <button class="filter-btn" data-filter="fullstack">Full-Stack</button>
+        <button class="filter-btn" data-filter="js">JavaScript</button>
+      </div>
+
+      <div class="project-grid">
+
+        <article class="project-card reveal" data-category="frontend">
+          <div class="project-media">
+            <img src="/images/youtube-clone.png" alt="YouTube Clone interface" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>YouTube Clone</h3>
+            <p>A responsive YouTube interface rebuilt from scratch, matching the real layout logic.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="/youtube project/youtube layout.html" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="js">
+          <div class="project-media">
+            <img src="/images/penguin-image.png" alt="Penguin animation project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Penguin</h3>
+            <p>A playful character animation exploring motion design in pure CSS.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://penguin-teal-six.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="frontend">
+          <div class="project-media">
+            <img src="/images/homepage.png" alt="News homepage project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>News Homepage</h3>
+            <p>A fully responsive homepage built for a Frontend Mentor challenge.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://news-homepage-six-gamma.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="frontend">
+          <div class="project-media">
+            <img src="/images/Apple.png" alt="Apple website recreation" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Apple</h3>
+            <p>A close recreation of Apple's product-page styling and type rhythm.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://apple-sooty-nine.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="frontend">
+          <div class="project-media">
+            <img src="/images/jessica.png" alt="Jessica list interface" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Jessica List</h3>
+            <p>A list-based interface focused on clean typography and vertical rhythm.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://jessica-ecru.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="fullstack">
+          <div class="project-media">
+            <img src="/images/desert.png" alt="Product list with cart" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Product List</h3>
+            <p>A product list with working cart logic, from a Frontend Mentor brief.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://product-list-fawn-two.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="frontend">
+          <div class="project-media">
+            <img src="/images/MONIEPOIT.png" alt="Moniepoint interface recreation" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Moniepoint Interface</h3>
+            <p>A rebuild of the Moniepoint website, focused on brand tone and layout precision.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://moniepoint-ebon.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="js">
+          <div class="project-media">
+            <img src="/images/extensionlist.png" alt="Browser extension manager" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Extension Manager</h3>
+            <p>A browser extension management interface with toggle states and filtering.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://browser-extension-manager-q71enlwsi.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card reveal" data-category="js">
+          <div class="project-media">
+            <img src="/images/valentine.png" alt="Valentine animated card project" loading="lazy">
+          </div>
+          <div class="project-body">
+            <h3>Valentine Project</h3>
+            <p>An animated Valentine's card with interactive JavaScript touches.</p>
+            <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+            <div class="project-links">
+              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://valentine-beta-swart.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
+            </div>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= EXPERIENCE TIMELINE ================= -->
+  <section id="experience" class="section section-alt">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <span class="tag">04 — Journey</span>
+        <h2>Experience &amp; milestones</h2>
+      </div>
+
+      <!-- TODO: replace these milestones with your real experience / timeline -->
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2023</span>
+            <h3>Started building for the web</h3>
+            <p>Began learning HTML, CSS and JavaScript by recreating real interfaces from scratch.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2024</span>
+            <h3>Went full-stack</h3>
+            <p>Picked up Node.js and Express, and started connecting front-ends to real back-end logic.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">2025</span>
+            <h3>Started shipping complete projects</h3>
+            <p>Moved from isolated exercises to fully working applications — from first line of code to a live deployed link.</p>
+          </div>
+        </div>
+        <div class="timeline-item reveal">
+          <div class="timeline-dot"></div>
+          <div class="timeline-content">
+            <span class="timeline-date">Now</span>
+            <h3>Looking ahead</h3>
+            <p>Deepening back-end skills and looking for a team building things worth building well.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= CONTACT ================= -->
+  <section id="contact" class="section">
+    <div class="wrap contact-wrap">
+      <div class="section-head reveal center">
+        <span class="tag">05 — Contact</span>
+        <h2>Let's build something</h2>
+        <p class="section-sub">Have a role, a project, or a question? I'd love to hear from you.</p>
+      </div>
+
+      <div class="contact-grid">
+        <form class="contact-form reveal" id="contact-form" novalidate>
+          <div class="form-row">
+            <div class="field">
+              <label for="name">Name</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+          </div>
+          <div class="field">
+            <label for="subject">Subject</label>
+            <input type="text" id="subject" name="subject" required>
+          </div>
+          <div class="field">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required></textarea>
+          </div>
+          <!-- NOTE: this form has no backend attached yet. Wire it up to
+               a service like Formspree, EmailJS, or your own API route. -->
+          <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+        </form>
+
+        <div class="contact-info reveal">
+          <a href="mailto:adekanyeseguncharles@gmail.com" class="contact-item">
+            <span class="contact-label">Email</span>
+            adekanyeseguncharles@gmail.com
+          </a>
+          <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">GitHub</span>
+            github.com/CharlesAdekanye
+          </a>
+          <a href="https://linkedin.com/in/charles-adekanye" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">LinkedIn</span>
+            linkedin.com/in/charles-adekanye
+          </a>
+          <a href="https://twitter.com/charlesbuilds" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">Twitter / X</span>
+            @charlesbuilds
+          </a>
+          <a href="https://instagram.com" target="_blank" rel="noopener" class="contact-item">
+            <span class="contact-label">Instagram</span>
+            @charles
+          </a>
+          <!-- TODO: update social links above with your real profile URLs -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Charles. All rights reserved.</span>
+    <span class="footer-tagline">Designed &amp; built by Charles.</span>
+  </div>
+</footer>
+
+<!-- ================= SCROLL TO TOP ================= -->
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 19V5M5 12l7-7 7 7"/></svg>
+</button>
+
+<script src="script.js"></script>
+</body>
+</html>
