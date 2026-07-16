@@ -43,27 +43,14 @@ document.addEventListener('DOMContentLoaded', () => {
     header.classList.toggle('scrolled', window.scrollY > 20);
   });
 
-  const navToggle = document.getElementById('nav-toggle');
-  const navLinks = document.getElementById('nav-links');
-  navToggle.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    navToggle.setAttribute('aria-expanded', isOpen);
-  });
-  navLinks.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      navToggle.setAttribute('aria-expanded', 'false');
-    });
-  });
-
   const sections = document.querySelectorAll('main section[id]');
   const navItems = document.querySelectorAll('.nav-link');
   const navObserver = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
       if(entry.isIntersecting){
         navItems.forEach(item => item.classList.remove('active'));
-        const activeLink = document.querySelector(`.nav-link[href="#${entry.target.id}"]`);
-        if(activeLink) activeLink.classList.add('active');
+        const activeLinks = document.querySelectorAll(`.nav-link[href="#${entry.target.id}"]`);
+        activeLinks.forEach(link => link.classList.add('active'));
       }
     });
   }, { rootMargin: '-45% 0px -50% 0px' });

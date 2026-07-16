@@ -64,10 +64,6 @@
   <nav class="nav wrap" aria-label="Primary">
     <a href="#home" class="logo">CharlesTech<span class="dot">.</span></a>
 
-    <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Toggle navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-
     <ul class="nav-links" id="nav-links">
       <li><a href="#home" class="nav-link" data-nav>Home</a></li>
       <li><a href="#about" class="nav-link" data-nav>About</a></li>
@@ -84,11 +80,39 @@
   </nav>
 </header>
 
+<!-- ================= BOTTOM ICON NAV (mobile only) ================= -->
+<nav class="bottom-nav" aria-label="Mobile navigation">
+  <a href="#home" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+    <span>Home</span>
+  </a>
+  <a href="#about" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+    <span>About</span>
+  </a>
+  <a href="#skills" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+    <span>Skills</span>
+  </a>
+  <a href="#projects" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+    <span>Projects</span>
+  </a>
+  <a href="#experience" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="14" x="2" y="7" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+    <span>Experience</span>
+  </a>
+  <a href="#contact" class="nav-link bottom-nav-item" data-nav>
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+    <span>Contact</span>
+  </a>
+</nav>
+
 <!-- ================= FLOATING SOCIAL RAIL (desktop) ================= -->
 <div class="social-rail" aria-hidden="true">
-  <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-  <a href="https://linkedin.com/in/charles-adekanye" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
-  <a href="https://twitter.com/charlesbuilds" target="_blank" rel="noopener" aria-label="Twitter / X">X</a>
+  <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+  <a href="https://linkedin.com/in/Adekanye Segun Charles" target="_blank" rel="noopener" aria-label="LinkedIn">IN</a>
+  <a href="https://twitter.com/𝐓ʜᴇ 𝐂ʜᴀʀʟᴇs 𝐓ᴇᴄʜ" target="_blank" rel="noopener" aria-label="Twitter / X">X</a>
   <span class="rail-line"></span>
 </div>
 
@@ -122,12 +146,16 @@
   <section id="about" class="section">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="tag">01 — About</span>
+        <span class="tag"> About</span>
         <h2>A little about me</h2>
       </div>
 
       <div class="about-grid">
         <div class="about-text reveal">
+          <div class="about-avatar-wrap">
+            <!-- TODO: replace with a real headshot at assets/profile.png (square image recommended) -->
+            <img src="/images/charles-image.png" alt="Charles" class="about-avatar">
+          </div>
           <p>I'm Charles — a full-stack developer who likes systems that work cleanly on both ends: the interface you see, and the logic underneath it.</p>
           <p>I build responsive, accessible interfaces and the back-end services behind them, with an eye for detail most people scroll past without noticing.</p>
           <p>I'm currently deepening my Node.js and Express skills, and looking for opportunities to build things that matter — for teams that care about quality as much as I do.</p>
@@ -160,7 +188,7 @@
   <section id="skills" class="section section-alt">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="tag">02 — Skills</span>
+        <span class="tag">Skills</span>
         <h2>What I work with</h2>
       </div>
 
@@ -213,7 +241,7 @@
   <section id="projects" class="section">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="tag">03 — Work</span>
+        <span class="tag"> Work</span>
         <h2>Selected projects</h2>
       </div>
 
@@ -235,7 +263,7 @@
             <p>A responsive YouTube interface rebuilt from scratch, matching the real layout logic.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="/youtube project/youtube layout.html" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -250,7 +278,7 @@
             <p>A playful character animation exploring motion design in pure CSS.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://penguin-teal-six.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -265,7 +293,7 @@
             <p>A fully responsive homepage built for a Frontend Mentor challenge.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://news-homepage-six-gamma.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -280,7 +308,7 @@
             <p>A close recreation of Apple's product-page styling and type rhythm.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://apple-sooty-nine.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -295,7 +323,7 @@
             <p>A list-based interface focused on clean typography and vertical rhythm.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://jessica-ecru.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -303,14 +331,14 @@
 
         <article class="project-card reveal" data-category="fullstack">
           <div class="project-media">
-            <img src="/images/desert.png" alt="Product list with cart" loading="lazy">
+            <img src="./images/desert.png" alt="Product list with cart" loading="lazy">
           </div>
           <div class="project-body">
             <h3>Product List</h3>
             <p>A product list with working cart logic, from a Frontend Mentor brief.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://product-list-fawn-two.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -325,7 +353,7 @@
             <p>A rebuild of the Moniepoint website, focused on brand tone and layout precision.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://moniepoint-ebon.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -340,7 +368,7 @@
             <p>A browser extension management interface with toggle states and filtering.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://browser-extension-manager-q71enlwsi.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -355,7 +383,7 @@
             <p>An animated Valentine's card with interactive JavaScript touches.</p>
             <div class="tech-tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
             <div class="project-links">
-              <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
+              <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="btn-icon">GitHub</a>
               <a href="https://valentine-beta-swart.vercel.app/" target="_blank" rel="noopener" class="btn-icon btn-icon-primary">Live Demo</a>
             </div>
           </div>
@@ -369,7 +397,7 @@
   <section id="experience" class="section section-alt">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="tag">04 — Journey</span>
+        <span class="tag"> Journey</span>
         <h2>Experience &amp; milestones</h2>
       </div>
 
@@ -415,12 +443,12 @@
   <section id="contact" class="section">
     <div class="wrap contact-wrap">
       <div class="section-head reveal center">
-        <span class="tag">05 — Contact</span>
+        <span class="tag"> Contact</span>
         <h2>Let's build something</h2>
         <p class="section-sub">Have a role, a project, or a question? I'd love to hear from you.</p>
       </div>
 
-      <div class="contact-grid">
+      <div class="contact-grid contact-grid-single">
         <form class="contact-form reveal" id="contact-form" novalidate>
           <div class="form-row">
             <div class="field">
@@ -446,28 +474,28 @@
           <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
         </form>
 
-        <div class="contact-info reveal">
-          <a href="mailto:adekanyeseguncharles@gmail.com" class="contact-item">
-            <span class="contact-label">Email</span>
-            adekanyeseguncharles@gmail.com
+        <!-- TODO: update the links below with your real profile URLs -->
+        <div class="social-icons-row reveal">
+          <a href="mailto:adekanyeseguncharles@gmail.com" class="social-icon-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            <span>Email</span>
           </a>
-          <a href="https://github.com/CharlesAdekanye" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-label">GitHub</span>
-            github.com/CharlesAdekanye
+          <a href="https://github.com/adekanye-segun-charles" target="_blank" rel="noopener" class="social-icon-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12.3 12.3 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg>
+            <span>GitHub</span>
           </a>
-          <a href="https://linkedin.com/in/charles-adekanye" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-label">LinkedIn</span>
-            linkedin.com/in/charles-adekanye
+          <a href="https://linkedin.com/in/Adekanye Segun Charles" target="_blank" rel="noopener" class="social-icon-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+            <span>LinkedIn</span>
           </a>
-          <a href="https://twitter.com/charlesbuilds" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-label">Twitter / X</span>
-            @charlesbuilds
+          <a href="https://twitter.com/𝐓ʜᴇ 𝐂ʜᴀʀʟᴇs 𝐓ᴇᴄʜ" target="_blank" rel="noopener" class="social-icon-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            <span>Twitter / X</span>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener" class="contact-item">
-            <span class="contact-label">Instagram</span>
-            @charles
+          <a href="https://instagram.com/Adekanye Segun Charles" target="_blank" rel="noopener" class="social-icon-item">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.501" y2="6.5"/></svg>
+            <span>Instagram</span>
           </a>
-          <!-- TODO: update social links above with your real profile URLs -->
         </div>
       </div>
     </div>
