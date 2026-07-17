@@ -225,7 +225,7 @@ document.addEventListener('DOMContentLoaded', () => {
         skillObserver.unobserve(entry.target);
       }
     });
-  }, { threshold: 0.3 });
+  }, { threshold: 0.01 });
   skillBars.forEach(bar => skillObserver.observe(bar));
 
   /* ------------------------------------------------------------------
