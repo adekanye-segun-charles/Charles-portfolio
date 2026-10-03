@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
   /* ------------------------------------------------------------------
      4. TYPING ANIMATION (rotating roles)
      ------------------------------------------------------------------ */
-  const roles = ['Software Engineer', 'Web Developer'];
+  const roles = ['Web Developer'];
   const typedEl = document.getElementById('typed-role');
   let roleIndex = 0, charIndex = 0, deleting = false;
 
