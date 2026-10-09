@@ -19,6 +19,10 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231A160F'/%3E%3Ctext x='50' y='66' font-size='38' font-family='Arial, sans-serif' font-weight='700' fill='%23EC9A2E' text-anchor='middle'%3ECT%3C/text%3E%3C/svg%3E">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,36 +33,47 @@
 <!-- ================= NAV ================= -->
 <header class="site-header">
   <nav class="nav wrap" aria-label="Primary">
-    <a href="index.html" class="logo"><span>CharlesTech<span class="dot">.</span></span><span class="logo-tag">WEB DEVELOPER</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link" data-page="index.html">Home</a></li>
-      <li><a href="about.html" class="nav-link" data-page="about.html">About</a></li>
-      <li><a href="projects.html" class="nav-link" data-page="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="nav-link" data-page="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">Let's Talk <span aria-hidden="true">↗</span></a>
+    <div class="nav-bar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 9l10 7 10-7-10-7Z"/><path d="M2 9v6l10 7 10-7V9"/></svg>
+        </span>
+        CharlesTech<span class="dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-page="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home</a></li>
+        <li><a href="about.html" class="nav-link" data-page="about.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          About</a></li>
+        <li><a href="projects.html" class="nav-link" data-page="projects.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+          Projects</a></li>
+        <li><a href="contact.html" class="nav-link" data-page="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Contact</a></li>
+      </ul>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <a href="index.html" class="nav-link" data-page="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home</a>
+      <a href="about.html" class="nav-link" data-page="about.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        About</a>
+      <a href="projects.html" class="nav-link" data-page="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+        Projects</a>
+      <a href="contact.html" class="nav-link" data-page="contact.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Contact</a>
+    </div>
   </nav>
 </header>
-
-<!-- ================= BOTTOM ICON NAV (mobile only) ================= -->
-<nav class="bottom-nav" aria-label="Mobile navigation">
-  <a href="index.html" class="nav-link bottom-nav-item" data-page="index.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span>Home</span>
-  </a>
-  <a href="about.html" class="nav-link bottom-nav-item" data-page="about.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    <span>About</span>
-  </a>
-  <a href="projects.html" class="nav-link bottom-nav-item" data-page="projects.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
-    <span>Projects</span>
-  </a>
-  <a href="contact.html" class="nav-link bottom-nav-item" data-page="contact.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-    <span>Contact</span>
-  </a>
-</nav>
 
 <main id="main">
 

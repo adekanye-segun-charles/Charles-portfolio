@@ -18,6 +18,28 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ------------------------------------------------------------------
+     MOBILE NAV TOGGLE (dropdown panel under the pill nav)
+     ------------------------------------------------------------------ */
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNavPanel = document.querySelector('.mobile-nav-panel');
+  if (navToggle && mobileNavPanel) {
+    const closeMobileNav = () => {
+      mobileNavPanel.classList.remove('is-open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    };
+    navToggle.addEventListener('click', () => {
+      const isOpen = mobileNavPanel.classList.toggle('is-open');
+      navToggle.setAttribute('aria-expanded', String(isOpen));
+    });
+    mobileNavPanel.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', closeMobileNav);
+    });
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 860) closeMobileNav();
+    });
+  }
+
+  /* ------------------------------------------------------------------
      SCROLL REVEAL — one simple fade-in, no stagger
      ------------------------------------------------------------------ */
   const revealItems = document.querySelectorAll('.reveal');
@@ -30,6 +52,36 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }, { threshold: 0.15 });
   revealItems.forEach(item => revealObserver.observe(item));
+
+  /* ------------------------------------------------------------------
+     STAT COUNTERS — count up once when each metric enters the viewport
+     ------------------------------------------------------------------ */
+  const statCounters = document.querySelectorAll('.stat-number[data-count]');
+  const statObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      statObserver.unobserve(entry.target);
+
+      const counter = entry.target;
+      const target = Number(counter.dataset.count);
+      const suffix = counter.dataset.suffix || '';
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+        counter.textContent = `${target}${suffix}`;
+        return;
+      }
+
+      const startTime = performance.now();
+      const duration = 1100;
+      const countUp = now => {
+        const progress = Math.min((now - startTime) / duration, 1);
+        const easedProgress = 1 - Math.pow(1 - progress, 3);
+        counter.textContent = `${Math.round(target * easedProgress)}${suffix}`;
+        if (progress < 1) requestAnimationFrame(countUp);
+      };
+      requestAnimationFrame(countUp);
+    });
+  }, { threshold: 0.45 });
+  statCounters.forEach(counter => statObserver.observe(counter));
 
   /* ------------------------------------------------------------------
      PROJECT FILTERING (only present on projects.html)

@@ -19,6 +19,10 @@
 
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%231A160F'/%3E%3Ctext x='50' y='66' font-size='38' font-family='Arial, sans-serif' font-weight='700' fill='%23EC9A2E' text-anchor='middle'%3ECT%3C/text%3E%3C/svg%3E">
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+
 <link rel="stylesheet" href="css/style.css">
 </head>
 
@@ -29,126 +33,157 @@
 <!-- ================= NAV ================= -->
 <header class="site-header">
   <nav class="nav wrap" aria-label="Primary">
-    <a href="index.html" class="logo"><span>CharlesTech<span class="dot">.</span></span><span class="logo-tag">WEB DEVELOPER</span></a>
-    <ul class="nav-links">
-      <li><a href="index.html" class="nav-link" data-page="index.html">Home</a></li>
-      <li><a href="about.html" class="nav-link" data-page="about.html">About</a></li>
-      <li><a href="projects.html" class="nav-link" data-page="projects.html">Projects</a></li>
-      <li><a href="contact.html" class="nav-link" data-page="contact.html">Contact</a></li>
-    </ul>
-    <a href="contact.html" class="nav-cta">Let's Talk <span aria-hidden="true">↗</span></a>
+    <div class="nav-bar">
+      <a href="index.html" class="logo">
+        <span class="logo-mark" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2 2 9l10 7 10-7-10-7Z"/><path d="M2 9v6l10 7 10-7V9"/></svg>
+        </span>
+        CharlesTech<span class="dot">.</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html" class="nav-link" data-page="index.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          Home</a></li>
+        <li><a href="about.html" class="nav-link" data-page="about.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          About</a></li>
+        <li><a href="projects.html" class="nav-link" data-page="projects.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+          Projects</a></li>
+        <li><a href="contact.html" class="nav-link" data-page="contact.html">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+          Contact</a></li>
+      </ul>
+      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-nav-panel">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg>
+      </button>
+    </div>
+    <div class="mobile-nav-panel" id="mobile-nav-panel">
+      <a href="index.html" class="nav-link" data-page="index.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+        Home</a>
+      <a href="about.html" class="nav-link" data-page="about.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        About</a>
+      <a href="projects.html" class="nav-link" data-page="projects.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
+        Projects</a>
+      <a href="contact.html" class="nav-link" data-page="contact.html">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+        Contact</a>
+    </div>
   </nav>
 </header>
-
-<!-- ================= BOTTOM ICON NAV (mobile only) ================= -->
-<nav class="bottom-nav" aria-label="Mobile navigation">
-  <a href="index.html" class="nav-link bottom-nav-item" data-page="index.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-    <span>Home</span>
-  </a>
-  <a href="about.html" class="nav-link bottom-nav-item" data-page="about.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
-    <span>About</span>
-  </a>
-  <a href="projects.html" class="nav-link bottom-nav-item" data-page="projects.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.9 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></svg>
-    <span>Projects</span>
-  </a>
-  <a href="contact.html" class="nav-link bottom-nav-item" data-page="contact.html">
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-    <span>Contact</span>
-  </a>
-</nav>
 
 <main id="main">
 
   <!-- ================= ABOUT ================= -->
-  <section class="section">
+  <section class="about-hero">
     <div class="wrap">
-      <div class="section-head reveal">
-        <span class="eyebrow">About</span>
-        <h2>A little about me</h2>
-      </div>
-
       <div class="about-grid">
-        <div class="about-text reveal">
-          <div class="about-avatar-wrap">
-            <img src="images/charles.jpeg" alt="CharlesTech" class="about-avatar">
+        <div class="about-portrait reveal">
+          <div class="about-portrait-frame">
+            <img src="images/charle-about image.jpeg" alt="CharlesTech, web developer" class="about-avatar">
           </div>
-          <p>I'm CharlesTech, a web developer who enjoys turning ideas into clear, useful online experiences.</p>
-          <p>I build responsive, accessible websites with an eye for the little details that make browsing feel effortless.</p>
-          <p>I'm always learning and looking for opportunities to create thoughtful websites with people who care about quality.</p>
         </div>
 
-        <div class="about-stats reveal">
-          <div class="stat-card">
-            <span class="stat-number">7+</span>
-            <span class="stat-label">Projects Completed</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">10+</span>
-            <span class="stat-label">GitHub Contributions</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">5+</span>
-            <span class="stat-label">Happy Clients</span>
-          </div>
-          <div class="stat-card">
-            <span class="stat-number">2+</span>
-            <span class="stat-label">Years of Experience</span>
+        <div class="about-text reveal">
+          <span class="eyebrow">A bit about me</span>
+          <h1 class="about-title">Thoughtful code.<br><span>Meaningful experiences.</span></h1>
+          <p class="about-lead">I'm CharlesTech, a web developer who turns ideas into clear, useful online experiences.</p>
+          <p>I build responsive, accessible websites with an eye for the details that make browsing feel effortless. I enjoy bringing design and functionality together to make the web work better for people.</p>
+          <p>I'm always learning and looking for opportunities to create thoughtful websites with people who care about quality.</p>
+          <div class="about-actions">
+            <a href="projects.html" class="btn btn-primary">Explore my work <span aria-hidden="true">↗</span></a>
+            <a href="contact.html" class="about-text-link">Let's talk <span aria-hidden="true">→</span></a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <section class="about-impact" aria-label="Experience highlights">
+    <div class="wrap">
+      <div class="about-stats">
+        <div class="stat-card reveal">
+          <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M7 8h10M7 12h6M7 16h3"/></svg></span>
+          <span class="stat-number" data-count="3" data-suffix="+">3+</span>
+          <span class="stat-label">Projects completed</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 7 3 12l5 5M16 7l5 5-5 5M14 4l-4 16"/></svg></span>
+          <span class="stat-number" data-count="20" data-suffix="+">20+</span>
+          <span class="stat-label">GitHub contributions</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8l1.1 1.1 7.8 7.8 7.8-7.8 1.1-1.1a5.5 5.5 0 0 0-.1-7.8Z"/></svg></span>
+          <span class="stat-number" data-count="3" data-suffix="+">3+</span>
+          <span class="stat-label">Happy clients</span>
+        </div>
+        <div class="stat-card reveal">
+          <span class="stat-icon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <span class="stat-number" data-count="1" data-suffix="+">1+</span>
+          <span class="stat-label">Years of experience</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- ================= SKILLS ================= -->
-  <section id="skills" class="section section-alt">
+  <section id="skills" class="section section-alt about-skills">
     <div class="wrap">
       <div class="section-head reveal">
-        <span class="eyebrow">Skills</span>
-        <h2>What I work with</h2>
+        <span class="eyebrow">My toolkit</span>
+        <h2>Tools for turning ideas into reality.</h2>
+        <p class="section-sub">A growing set of technologies I use to design, build, and ship useful experiences.</p>
       </div>
 
       <div class="skills-grid">
         <div class="skill-group reveal">
-          <h3>Languages</h3>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>HTML</span><span>75%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:75%"></div></div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>CSS</span><span>80%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:80%"></div></div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>JavaScript</span><span>55%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:55%"></div></div>
+          <span class="skill-group-icon" aria-hidden="true">&lt;/&gt;</span>
+          <h3>Core languages</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">HTML</span>
+            <span class="skill-pill">CSS</span>
+            <span class="skill-pill">JavaScript</span>
           </div>
         </div>
 
         <div class="skill-group reveal">
+          <span class="skill-group-icon" aria-hidden="true">✳</span>
           <h3>Frameworks</h3>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>Tailwind CSS</span><span>65%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:65%"></div></div>
+          <div class="skill-pills">
+            <span class="skill-pill">Tailwind CSS</span>
+            <span class="skill-pill">Node.js</span>
+            <span class="skill-pill">Express.Js</span>
+            <span class="skill-pill">Bootstrap</span>
           </div>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>Node.js</span><span>50%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:50%"></div></div>
-          </div>
-          <div class="skill-bar">
-            <div class="skill-bar-top"><span>Express</span><span>85%</span></div>
-            <div class="skill-track"><div class="skill-fill" style="width:85%"></div></div>
+        </div>
+
+
+        <div class="skill-group reveal">
+          <span class="skill-group-icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="8" ry="3"></ellipse><path d="M4 5v14c0 1.66 3.58 3 8 3s8-1.34 8-3V5"></path><path d="M4 12c0 1.66 3.58 3 8 3s8-1.34 8-3"></path></svg>
+          </span>
+          <h3>Database</h3>
+          <div class="skill-pills">
+            <span class="skill-pill">Supabase</span>
+            <span class="skill-pill">Prisma ORM</span>
           </div>
         </div>
 
         <div class="skill-group reveal">
+          <span class="skill-group-icon" aria-hidden="true">↗</span>
           <h3>Tools</h3>
-          <div class="tool-chips">
-            <span class="chip">Git</span>
-            <span class="chip">GitHub</span>
-            <span class="chip">VS Code</span>
+          <div class="skill-pills">
+            <span class="skill-pill">Git</span>
+            <span class="skill-pill">GitHub</span>
+            <span class="skill-pill">VS Code</span>
+            <span class="skill-pill">Render</span>
+            <span class="skill-pill">Vercel</span>
+            <span class="skill-pill">Postman</span>
+            <span class="skill-pill">Codex</span>
+            <span class="skill-pill">Render</span>
           </div>
         </div>
       </div>
@@ -156,11 +191,11 @@
   </section>
 
   <!-- ================= EXPERIENCE TIMELINE ================= -->
-  <section id="experience" class="section">
+  <section id="experience" class="section about-journey">
     <div class="wrap">
       <div class="section-head reveal">
         <span class="eyebrow">Journey</span>
-        <h2>Experience &amp; milestones</h2>
+        <h2>Experience </h2>
       </div>
 
       <div class="timeline">
@@ -175,14 +210,6 @@
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2026</span>
-            <h3>Started shipping complete projects</h3>
-            <p>Moved from isolated exercises to fully working applications — from first line of code to a live deployed link.</p>
-          </div>
-        </div>
-        <div class="timeline-item reveal">
-          <div class="timeline-dot"></div>
-          <div class="timeline-content">
             <span class="timeline-date">2025</span>
             <h3>Moved to backend</h3>
             <p>Picked up Node.js and Express, and started connecting front-ends to real back-end logic.</p>
@@ -191,7 +218,7 @@
         <div class="timeline-item reveal">
           <div class="timeline-dot"></div>
           <div class="timeline-content">
-            <span class="timeline-date">2024</span>
+            <span class="timeline-date">2025</span>
             <h3>Started with frontend at Kwara Innovation Lab</h3>
             <p>Began learning HTML, CSS and JavaScript by recreating real interfaces from scratch.</p>
           </div>
